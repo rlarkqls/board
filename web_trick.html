@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>trick</title>
+
+<style>
+	
+	.image_table {width:1200px; margin:0 auto;}
+.image_table ul {font-size:0;text-align:center;}
+.image_table ul li {font-size:12px;display:inline-block;vertical-align:top;width:25%;}
+.image_table ul li a {text-decoration:none;}
+.image_table ul li a {display:block;width:auto;background:#f5f5f5;margin:5px;}
+.image_table ul li a .screen {overflow:hidden;font-size:0;height:160px;} 
+.image_table ul li a img {width:100%;transition:transform 1s;}
+.image_table ul li a h3 {font-size:16px;color:#000;} 
+.image_table ul li a p {padding:12px;color:#666;} 
+.image_table ul li a:hover img {transform:scale(1.2);}
+	
+	    #menu {width:1880px; height: 55px; margin:5px auto 0; border: 0px solid #000; }
+	    #menu2 {width:1880px; height: 500px; margin:0px auto 0; border: 0px solid #000; background-image: url("headerrrr.jpg") }
+		#menubar ul {
+		      margin : 30;
+		      padding : 30;
+			  width : 900px; }
+		#menubar ul li {
+             display: inline-block;
+			list-style-type: none;
+			padding: 0px 60px;
+	 	     }
+		#menubar ul li a {
+			color: black;
+			text-decoration: none; }
+		#menubar ul li a:hover {
+			color:#8CA79B }
+	
+#frame {width:1890px; height: 3250px; margin:5px auto 0; border: 0px solid #00f; }
+		#main1 {width:1880px; height: 800px; margin:00px auto 0; padding-top: 100px; border: 0px solid #000; background-color:#f9f4df;}
+	    #main2 {width:1880px; height: 600px; margin:50px auto 0; border: 0px solid #000; }
+	    #main3 {width:1880px; height: 1160px; margin:50px auto 0; border: 0px solid #000;  }
+		#menu  {width:1880px; height: 55px; margin-top:5px auto 0; border: 0px solid #000;}
+	    #etc {width:1880px; height: 130px; margin:0px auto 0; border: 0px solid #000; background-color:#132920; }
+		
+header, footer {border 0px solid #F00; margin:20px; padding:0px; height:150px }
+	* {margin:0;padding:0;}
+	.section input[id*="slide"] {display:none;}
+	.section .slidewrap {max-width:1200px;margin:0 auto;}
+	.section .slidelist {white-space:nowrap;font-size:0;overflow:hidden;position:relative;}
+	.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+	.section .slidelist > li > a {display:block;position:relative;}
+	.section .slidelist > li > a img {width:100%;}
+	.section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+	.section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+	.section .slidelist .textbox h3 {font-size:36px;color:#fff;;transform:translateY(30px);transition:all .5s;}
+	.section .slidelist .textbox p {font-size:16px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+	
+	/* input에 체크되면 슬라이드 효과 */
+	.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+	/* input에 체크되면 텍스트 효과 */
+	.section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+	.section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+	.section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+	.section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+	.section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+	.section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+
+	/* 좌,우 슬라이드 버튼 */
+	.slide-control > div {display:none;}
+	.section .left {left:30px;background:url('[input]HTML+CSS+슬라이드+효과+예제파일/img/left.png') center center / 100% no-repeat;}
+	.section .right {right:30px;background:url('[input]HTML+CSS+슬라이드+효과+예제파일/img/right.png') center center / 100% no-repeat;}
+	.section input[id="slide01"]:checked ~ .slidewrap .slide-control > div:nth-child(1) {display:block;}
+	.section input[id="slide02"]:checked ~ .slidewrap .slide-control > div:nth-child(2) {display:block;}
+	.section input[id="slide03"]:checked ~ .slidewrap .slide-control > div:nth-child(3) {display:block;}
+
+	/* 페이징 */
+	.slide-pagelist {text-align:center;padding:20px;}
+	.slide-pagelist > li {display:inline-block;vertical-align:middle;}
+	.slide-pagelist > li > label {display:block;padding:8px 30px;border-radius:30px;background:#ccc;margin:20px 10px;cursor:pointer;}
+	.section input[id="slide01"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(1) > label {background:#999;}
+	.section input[id="slide02"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(2) > label {background:#999;}
+	.section input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {background:#999;}
+	</style>
+</head>
+<body>
+  <center>
+	<div id="frame">
+	
+<div id="menu">	
+	<nav id="menubar">
+      <ul>
+		  <li><a href="index.html"><p style="font-size: 20px"><br>HOME</p></a></li>
+	    <li><a href="web_info.html"><p style="font-size: 20px">INFO</p></a></li>
+		  <li><a href="web_trick.html"><p style="font-size: 20px">TRICK</p></a></li>
+	    <li><a href="web_style.html"><p style="font-size: 20px">DECK</p>
+	    </a></li>
+ 
+</ul>
+</div>
+	<div id="menu2">
+	</div>
+<div id="main1">
+<div class="section">
+	<input type="radio" name="slide" id="slide01" checked>
+	<input type="radio" name="slide" id="slide02">
+	<input type="radio" name="slide" id="slide03">
+	<div class="slidewrap">
+		
+		<ul class="slidelist">
+			<li class="slideitem">
+				<a>
+					<div class="textbox">
+						<a href="https://www.youtube.com/watch?v=7lwEfnjbgPs&list=PLltUweO78kYMycSL8BQNYbdWkaXRBTbDE&index=2" target="_blank"><h3>내인생 첫 트릭, 피봇</h3>
+						<p>보드를 살짝 띄워 180도 돌리는 트릭 </p></a>
+					</div>
+					<img src="pivot.jpg" width="1500" height="670">
+				</a>
+			</li>
+			<li class="slideitem">
+				<a>
+					
+					<div class="textbox">
+						<a href="https://www.youtube.com/watch?v=DJB4DUwFTG0&list=PLltUweO78kYMycSL8BQNYbdWkaXRBTbDE&index=3" target="_blank"><h3>피봇다음은? 샤빗!</h3>
+						<p>피봇180이 돌아가면서 스탠스가 그대로 유지되는 트릭 </p></a>
+					</div>
+					<img src="sha.jpg" width="1500" height="670">
+				</a>
+			</li>
+			<li class="slideitem">
+				<a>
+					
+					<div class="textbox">
+						<a href="https://www.youtube.com/watch?v=DJB4DUwFTG0&list=PLltUweO78kYMycSL8BQNYbdWkaXRBTbDE&index=3" target="_blank"><h3>댄싱의 기본 180 스텝</h3>
+						<p>발을 180도로 교차하며 스텝을 밟는 트릭</p></a>
+					</div>
+					<img src="180step.jpg" width="1500" height="670">
+				</a>
+			</li class="slideitem">
+
+			<div class="slide-control">
+				<div>
+					<label for="slide03" class="left"></label>
+					<label for="slide02" class="right"></label>
+				</div>
+				<div>
+					<label for="slide01" class="left"></label>
+					<label for="slide03" class="right"></label>
+				</div>
+				<div>
+					<label for="slide02" class="left"></label>
+					<label for="slide01" class="right"></label>
+				</div>
+			</div>
+
+		</ul>
+
+		<ul class="slide-pagelist">
+			<li><label for="slide01"></label></li>
+			<li><label for="slide02"></label></li>
+			<li><label for="slide03"></label></li>
+			
+		</ul>
+	</div>
+	</div>
+	</div>
+	<div id="main3"> <br><br><h2>트릭을 접하는 이들에게</h2> <br> 처음에 멋진 트릭을 구사하는 것을 보고 보드에 입문하는 사람들이 많을것입니다.<br><br> 아래의 예시이외에도 수많은 트릭들이 있으며, 나중에 실력이 오르게되면 트릭을 섞어서 새로운 트릭을 만들거나, 기발한 트릭을 만들어 볼 수도 있어요.<br><br>
+		주의할점은 열심히 보드를 타면서 보드가 발에 익게 하는것이 첫번째.<br><br> 오래 연습하면 보드가 발에 붙어있는 것같은 느낌이 나는데, 그렇게 기초를 탄탄히 하고 매뉴얼 같은 것을 열심히 연습하고 난 뒤 상급 기술을 연마하는것이 좋습니다.<br><br>
+		이제 처음으로 연습하는 만큼 넘어지기 쉬우무로 보호장구는 필수!<br><br> 보호장구는 보드를 연습할때 자주 땅바닥과 부딫히는 무릎, 팔꿈치를 보호해주며, 헬멧을 머리를 보호해 뇌진탕을 막아줍니다.<br><br> 
+		
+		<br> 
+	<div id="main2">
+		<div class="image_table">
+	<h3>롱보드 트릭</h3>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/watch?v=XzTtJ580GcU&list=PLltUweO78kYMycSL8BQNYbdWkaXRBTbDE&index=6" target="_blank">
+				<div class="screen"><img src="vid1.jpg"></div>
+				<h3>피루엣</h3>
+				<p>롱보드위에서 한바퀴 도는 트릭</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=_jCq1k21pDw&list=PLltUweO78kYOLI14BDIqhzaycNcK3N_ev&index=29"target="_blank">
+				<div class="screen"><img src="vid2.jpg"></div>
+				<h3>크로스 스텝</h3>
+				<p>크로스로 스텝을 밟는 롱보드 기본스텝</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=N2aci9FLC44&list=PLltUweO78kYOLI14BDIqhzaycNcK3N_ev&index=9"target="_blank">
+				<div class="screen"><img src="vid3.jpg"></div>
+				<h3>본레스 트릭 3가지</h3>
+				<p>테일킥을 차면서 왼손으로 노즈킥을 잡는트릭</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=ycCazvXx-MI&list=PLltUweO78kYMycSL8BQNYbdWkaXRBTbDE&index=7" target="_blank">
+				<div class="screen"><img src="vid4.jpg"></div>
+				<h3>노컴플라이 180</h3>
+				<p>테일을 밟아 데크를 180도 돌리는 트릭</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=ni-fXWeFApM" target="_blank">
+				<div class="screen"><img src="vid5.jpg"></div>
+				<h3>페가수스</h3>
+				<p>데크를 공중에 띄운후 손으로 잡고 착지하는 트릭</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=dVBjOl_SNWQ" target="_blank">
+				<div class="screen"><img src="vid6.jpg"></div>
+				<h3>피터팬</h3>
+				<p>트릭 기초 180스텝의 응용스텝</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=QmtQEF5Wqjs" target="_blank">
+				<div class="screen"><img src="vid7.jpg"></div>
+				<h3>빅스핀</h3>
+				<p>보드를 공중에띄워 360도 회전후 착지하는 트릭</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=WgctWJ_OfGQ" target="_blank">
+				<div class="screen"><img src="vid8.jpg"></div>
+				<h3>킥플립</h3>
+				<p>공중에 보드를 띄운후 플립을 넣는 트릭</p>
+			</a>
+		</li>
+	</ul>
+</div>
+		</div>
+	<div id="main2">
+				<div class="image_table">
+	<h3>롱보드 초보라면 필수시청!</h3>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/watch?v=fS_WrUhosxc" target="_blank">
+				<div class="screen"><img src="vid9.jpg"></div>
+				<h3>롱보드 기초의 모든것</h3>
+				<p>초보탈출을 위한 기초강좌영상</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=nD6mL_UncBg&list=PLltUweO78kYOLI14BDIqhzaycNcK3N_ev&index=17" target="_blank">
+				<div class="screen"><img src="vid10.jpg"></div>
+				<h3>롱보드 라이딩</h3>
+				<p>라이딩감성넘치는 롱보드</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=GKYpJnSU-7w" target="_blank">
+				<div class="screen"><img src="vid11.jpg"></div>
+				<h3>롱보드 고르는법</h3>
+				<p>초보를위한 간단한 선택 팁</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=5YyfW6ywUmo" target="_blank">
+				<div class="screen"><img src="vid12.jpg"></div>
+				<h3>롱보드 댄싱</h3>
+				<p> 설렘주의! 롱보드 댄싱,트릭</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=QotxBSLz0L8" target="_blank">
+				<div class="screen"><img src="vid13.jpg"></div>
+				<h3>롱보드 촬영팁</h3>
+				<p>롱보드 영상 예쁘게 찍는 꿀팁</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=cURw8A3zAfM" target="_blank">
+				<div class="screen"><img src="vid14.jpg"></div>
+				<h3>롱보드 조립법</h3>
+				<p>롱보드 교체 및 조립법</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=iIL8HMNLbng" target="_blank">
+				<div class="screen"><img src="vid15.jpg"></div>
+				<h3>롱보드 개봉기</h3>
+				<p>댄싱 롱보드 언박싱</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=YtXzcX0LOIY" target="_blank">
+				<div class="screen"><img src="vid16.jpg"></div>
+				<h3>롱보드 축제 퍼포먼스</h3>
+				<p>신촌 롱보드페스티벌 퍼포먼스</p>
+			</a>
+		</li>
+	</ul>
+</div>
+			</div>
+		
+	           </div>
+	
+		</div>
+	
+</div>
+
+</body>
+</html>

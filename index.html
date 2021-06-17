@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> main </title>
+
+<style>
+	
+	img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;}
+	
+	.gallerylist {max-width:1900px;width:100%;margin:0 auto; padding:10;}
+.gallerylist > ul {font-size:0;}
+.gallerylist > ul > li {display:inline-block;vertical-align:top;width:33.3%;}
+.gallerylist > ul > li > a {display:block;width:auto;text-decoration: none;margin:80px;}
+.gallerylist > ul > li > a .screen {position:relative;overflow:hidden;}
+.gallerylist > ul > li > a .screen .top {position:absolute;bottom:150%;left:30px;z-index:2;color:#fff;font-size:26px;font-weight:900;transition:all .35s;}
+.gallerylist > ul > li > a .screen .bottom {position:absolute;top:150%;left:30px;z-index:2;color:#fff;font-size:14px;transition:all .35s;}
+.gallerylist > ul > li > a .screen img {width:100%;}
+.gallerylist > ul > li > a h3 {font-size:14px;text-align:center;padding:20px;color:#666;}
+.gallerylist > ul > li > a .screen::after {content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1;opacity:0;transition:all .35s;}
+.gallerylist > ul > li > a:hover .top {bottom:52%;}
+.gallerylist > ul > li > a:hover .bottom {top:52%;}
+.gallerylist > ul > li > a:hover .screen::after {opacity:1;}
+
+	
+		#menubar ul {
+		      margin : 30;
+		      padding : 30;
+			  width : 900px; }
+		#menubar ul li {
+             display: inline-block;
+			list-style-type: none;
+			padding: 0px 60px;
+	 	     }
+		#menubar ul li a {
+			color: black;
+			text-decoration: none; }
+		#menubar ul li a:hover {
+			color:#8CA79B }
+	
+#frame {width:1890px; height: 2000px; margin:5px auto 0; border: 0px solid #00f; }
+header, footer {border 0px solid #F00; margin:20px; padding:0px; height:150px }
+
+#menu {width:1880px; height: 55px; margin:5px auto 0; border: 0px solid #000; }
+
+#header {width:1880px; height: 500px; margin:0px auto 0; border: 0px solid #000; }
+
+#main1 {width:1880px; height: 600px; margin:0px auto 0; border: 0px solid #000; }
+
+#main2 {width:1880px; height: 700px; margin:0px auto 0; border: 0px solid #000; background-color:#f9f4df; }
+
+#content1 {width:450px; height: 450px; float: left; margin-left:210px; margin-top:80px;  border: 0px solid #000; }
+#content2 {width:450px; height: 450px; float: left; margin-left:50px; margin-top:80px;  border: 0px solid #000; }
+#content3 {width:450px; height: 450px; float: left; margin-left:50px; margin-top:80px; border: 0x solid #000; }
+
+#content4-1 {width:1800px; height: 110px; float: left; margin-left:30px; margin-top:50px; border: 0px solid #000; }
+#content4 {width:350px; height: 100px; float: left; margin-left:760px; margin-right:760px; margin-top:0px; border: 1px solid #000; }
+#content5 {width:700px; height: 450px; float: left; margin-left:615px; margin-top:50px; border: 0px solid #000; }
+
+
+#etc {width:1880px; height: 130px; margin:0px auto 0; border: 1px solid #000; background-color:#132920; }
+</style>
+
+
+
+</head>
+
+<body>
+ <center>
+	<div id="frame">
+	
+<div id="menu">	
+	<nav id="menubar">
+      <ul>
+		  <li><a href="index.html"><p style="font-size: 20px">HOME</p></a></li>
+		  <li><a href="web_info.html"><p style="font-size: 20px">INFO</p></a></li>
+		  <li><a href="web_trick.html"><p style="font-size: 20px">TRICK</p></a></li>
+		  <li><a href="web_style.html"><p style="font-size: 20px">DECK</p></a></li>
+</ul>
+</div>
+
+
+<div id="header"><img src="headerrr.jpg" alt=header style="max-width:100%; height:auto;" ></div>
+	<center><h2><span style="color:#4B6459"><br><br><br>나에게 알맞은 롱보드 스타일은?</span></h2></center>
+<div id="main1">
+	<div class="gallerylist">
+	<ul>
+		<li>
+			<a href="">
+				<div class="screen">
+					<div class="top">댄싱</div>
+					<div class="bottom">춤을춘다는 의미의 댄싱 <br><br> 굴러가는 보드 위에서 이리저리 <br><br> 스텝을 밟으며 타는 스타일</div>
+					<img src="dancing.jpg">
+				</div>
+				<div>
+					
+				</div>
+			</a>
+		</li>
+		
+		<li>
+			<a href="">
+				<div class="screen">
+					<div class="top">프리스타일</div>
+					<div class="bottom">롱보드 위에서 스텝도 밟고 공중에 띄우는 등 <br><br>화려한 트릭을 구사하는 라이딩 스타일</div>
+					<img src="cruising.jpg">
+				</div>
+				<div>
+					
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="screen">
+					<div class="top">크루징</div>
+					<div class="bottom">보드를 타면서 동네나 길거리를 돌아다니는등의 <br><br>이동수단의 용도로 사용하기 좋은 <br><br>롱보드의 용도중 가장 단순한 라이딩스타일 </div>
+					<img src="free.jpg">
+				</div>
+				<div>
+					
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+
+</div>
+<div id="main2"> <br><br><h2>STORY</h2><p style="font-size: 20px">짧게 알아보는 롱보드 스토리
+	<br><br><br><br>1940년대 캘리포니아의 서퍼들이 파도가 없는날도 보드를 즐기기 위해
+	<br><br>서핑보드에 바퀴를 단것이 시초가 된 스케이트보드.
+	<br><br>그중 롱보드는 길이가 긴 보드의 한 종류입니다.
+	<br><br><br><br>36인치 이상의 길이를 가진 보드는 롱보드라고 볼 수 있습니다.
+	<br><br>롱보드는 많은 스타일이 있지만 그중에서도 'Freestyle longboard (프리스타일 롱보드)',
+	<br><br>'Dancing longboard (댄싱 롱보드)', 'Cruising longboard' (크루징 롱보드)' 등으로
+	<br><br>다양하게 나뉠 수 있습니다.</p>
+	
+	</div>
+<div id="etc"> 
+	</div>
+</div>
+
+
+
+
+</body>
+</html>
